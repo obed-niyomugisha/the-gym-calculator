@@ -49,6 +49,14 @@ export default function Button({ value }: { value: string }) {
           break;
       }
     }
+
+    if (value == "+/-") {
+      setScreenValue(screenValue * -1);
+    }
+
+    if (value == "%") {
+      setScreenValue(screenValue / 100);
+    }
   }
 
   return (
