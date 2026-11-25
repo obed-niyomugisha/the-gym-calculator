@@ -1,19 +1,19 @@
 import Screen from "./components/Screen";
 import Keyboard from "./components/Keyboard";
-import { Calculator, type Operator, type Operands } from "./utils/context";
+import { Calculator } from "./utils/context";
 import { useState } from "react";
 
 export default function App() {
-  const [operator, setOperator] = useState<Operator>("+");
-  const [operands, setOperands] = useState<Operands>([0, 0]);
+  const [operator, setOperator] = useState("+");
+  const [operand, setOperand] = useState(0);
   const [screenValue, setScreenValue] = useState(0);
 
   const calculator = {
     operator,
-    operands,
+    operand,
     screenValue,
     setOperator,
-    setOperands,
+    setOperand,
     setScreenValue,
   };
 

@@ -1,14 +1,11 @@
 import { createContext } from "react";
 
-export type Operator = string;
-export type Operands = [number, number];
-
 type CalculatorType = {
-  operands: Operands;
-  operator: Operator;
+  operand: number;
+  operator: string;
   screenValue: number;
-  setOperator: (operator: Operator) => void;
-  setOperands: (operand: Operands) => void;
+  setOperator: (operator: string) => void;
+  setOperand: (operand: number) => void;
   setScreenValue: (value: number) => void;
 };
 

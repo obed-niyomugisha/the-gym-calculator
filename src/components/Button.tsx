@@ -11,8 +11,8 @@ export default function Button({ value }: { value: string }) {
     const {
       screenValue,
       setScreenValue,
-      operands,
-      setOperands,
+      operand,
+      setOperand,
       operator,
       setOperator,
     } = calculator;
@@ -28,26 +28,24 @@ export default function Button({ value }: { value: string }) {
     }
 
     if (isPrimary(value) && value !== "=") {
-      setOperands([screenValue, 0]);
+      setOperand(screenValue);
       setOperator(value);
       setScreenValue(0);
     }
 
     if (value == "=") {
-      const [firstOperand] = operands;
-
       switch (operator) {
         case "+":
-          setScreenValue(firstOperand + screenValue);
+          setScreenValue(operand + screenValue);
           break;
         case "-":
-          setScreenValue(firstOperand - screenValue);
+          setScreenValue(operand - screenValue);
           break;
         case "x":
-          setScreenValue(firstOperand * screenValue);
+          setScreenValue(operand * screenValue);
           break;
         case "÷":
-          setScreenValue(firstOperand / screenValue);
+          setScreenValue(operand / screenValue);
           break;
       }
     }
